@@ -1,0 +1,618 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<!--<script src="https://kit.fontawesome.com/c3948d4f19.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"> -->
+
+<title>Technical CSS </title>
+<meta charset="UTF-8">
+<meta name=" robots" content="index,all">
+<meta name="description" content=" Simple Technical Landing Page.Codepen Exercise">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+html,
+body,
+main {
+  min-width: 290px;
+  color: black;
+  
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#navbar {
+  position: fixed;
+  min-width: 290px;
+  top: 0px;
+  left: 10px;
+  width: 200px;
+  height: 70%;
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+ color: black;
+  background-color:rgba(0, 22, 22, 0.4);
+  
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#navbar li {
+  color: black;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 10px 30px;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+section article {
+  color: black;
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid;
+    height: 207px;
+  }
+
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}
+
+</style>
+</head>
+
+<nav id="navbar">
+    <header>CSS Documentation</header>
+    <ul>
+      <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+      <li>
+        <a class="nav-link" href="#What_you_should_already_know"
+          >What you should already know</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" href="#basics"> Basics</a>
+      </li>
+
+      <!--<li><a class="nav-link" href="#Hello_world">Hello world</a></li>-->
+      
+      <li><a class="nav-link" href="#selectors">Selectors</a></li>
+      <li>
+        <a class="nav-link" href="#layout">Layout</a>
+      </li>
+      <li><a class="nav-link" href="#css_variables">CSS Variables</a></li>
+      
+      <li><a class="nav-link" href="#getting_fancy">Getting Fancy With CSS</a></li>
+
+      <!--<li><a class="nav-link" href="#Constants">Constants</a></li>-->
+
+      <li><a class="nav-link" href="#media_queries">Media Queries</a></li>
+      <li>
+        <a class="nav-link" href="#css_inspector">CSS Inspector</a>
+      </li>
+      <li><a class="nav-link" href="#testing_checklist">Testing Checklist</a></li>
+      
+      <!--<li>
+        <a class="nav-link" href="#Function_declarations"
+          >Function declarations</a
+        >
+      </li>-->
+
+      <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <article>
+        <p>
+          Cascading Style Sheets (CSS) is a style sheet 
+          language used for describing the presentation of a 
+          document written in a markup language such as HTML.
+          CSS is a cornerstone technology of the World Wide Web, 
+          alongside HTML and JavaScript.
+        </p>
+  
+        <p>
+            CSS is designed to enable the separation of presentation and content, 
+            including layout, colors, and fonts. This separation can improve 
+            content accessibility, provide more flexibility and control in the specification 
+            of presentation characteristics, enable multiple web pages to share formatting 
+            by specifying the relevant CSS in a separate .css file which reduces complexity 
+            and repetition in the structural content as well as enabling the .css file to be 
+            cached to improve the page load speed between the pages that share the file and its formatting. 
+        </p>
+
+        <p>
+            Separation of formatting and content also makes it feasible to present the same markup page 
+            in different styles for different rendering methods, such as on-screen, in print, by voice 
+            (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also 
+            has rules for alternate formatting if the content is accessed on a mobile device.
+        </p>
+
+      </article>
+    </section>
+
+    <section class="main-section" id="What_you_should_already_know">
+      <header>What you should already know</header>
+      <article>
+        <p>This guide assumes you have the following basic background:</p>
+  
+        <ul>
+          <li>
+            A general understanding of the Internet and the World Wide Web (WWW).
+          </li>
+          <li>Good working knowledge of HyperText Markup Language (HTML).</li>
+          <li>
+            Some programming experience. If you are new to programming, try one of
+            the tutorials linked on the main page about JCSS.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="main-section" id="basics">
+      <header>Basics</header>
+      <article>
+        <p>
+            The name cascading comes from the specified priority scheme to determine
+             which style rule applies if more than one rule matches a particular element.
+            This cascading priority scheme is predictable.The CSS specifications are 
+            maintained by the World Wide Web Consortium (W3C). 
+            Internet media type (MIME type) text/css is registered for use with CSS by 
+            RFC 2318 (March 1998). The W3C operates a free CSS 
+            validation service for CSS documents.
+        </p>
+  
+        <p>
+            In addition to HTML, other markup languages support the use of 
+            CSS including XHTML, plain XML, SVG, and XUL. 
+        </p>
+        <p>
+            CSS has a simple syntax and uses a number of English 
+            keywords to specify the names of various style properties.
+            A style sheet consists of a list of rules. Each rule or rule-set
+             consists of one or more selectors, and a declaration block. 
+        </p>
+      </article>
+    </section>
+
+    <!--<section class="main-section" id="Hello_world">
+      <header>Hello world</header>
+      <article>
+        To get started with writing JavaScript, open the Scratchpad and write your
+        first "Hello world" JavaScript code:
+        <code
+          >function greetMe(yourName) { alert("Hello " + yourName); }
+          greetMe("World");
+        </code>
+  
+        Select the code in the pad and hit Ctrl+R to watch it unfold in your
+        browser!
+      </article>
+    </section>-->
+    
+    <section class="main-section" id="selectors">
+      <header>Selectors</header>
+      <p>
+        In CSS, selectors declare which part of the markup a style applies
+        to by matching tags and attributes in the markup itself.
+        Selectors may apply to the following: .
+      </p>
+      <p>
+        <ul>
+            <li>All elements of a specific type, e.g. the second-level headers h2 </li>
+            <li>Elements with class attributes e.g .button </li>
+            <li>Elements with id attributes such as #welcome </li>
+            <li>Pseudo element and class selectors such as :hover which is a pseudo 
+                or pseudo element selectors such as ::first-line class selector</li>
+        </ul>
+      </p>
+      <p>
+      Selectors may be combined in many ways to achieve great specificity and 
+      flexibility. Multiple selectors may be joined 
+      in a spaced list to specify elements by location, element type, id, 
+      class, or any combination thereof. The order of the selectors is important.
+      </p>
+      <ul>
+          <li>(div >.button) matches every .button element thats a direct child of a div</li>
+          <li>(div.button) matches every .button element thats a descendant of a div  </li>
+          <li>(div.button) matches div with class button</li>
+      </ul>
+
+      <p>
+        
+      </p>
+    </section>
+
+    <section class="main-section" id="layout">
+      <header>Layout</header>
+      <article>
+        HTml element has two defaults when displaying content.
+        <p>
+            <ul>
+            <li>Inline.</li>
+            <li>Block. </li>
+           </ul>
+        </p> 
+
+        <p>
+          Inline elements are laid out horizontally. Block elements 
+          are laid out vertically by default.CSS 
+          can however affect this default layout by using 
+          <code> display: flex;</code> or <code> display: grid; </code>
+        </p>
+        <p>
+            Inline elements ignore width and height. Setting the width is impossible but in 
+            some sitiuations you can use <code> line-height: ;</code> to change the height.
+            Display can force an element to be inline or block or 
+            inline-block. Display determines two things:
+            <ul>
+                <li>whether the elemnt itself is inline, block or inline-block</li>
+                <li>how child elements are laid out such as grid, flex, table, default.</li>
+            </ul>
+        </p>
+        <p>
+            The layout of a webpage can be altered using :
+            <ul>
+                <li>Padding and margins</li>
+                <li>Border</li>
+                <li>Flexbox</li>
+                <li>Grids</li>
+                <li>Positioning</li>
+
+
+            </ul>
+        </p>
+
+      </article>
+    </section>
+
+    <section class="main-section" id="css_variables">
+      <header>CSS Variables</header>
+      <article>
+       
+        <p>
+          CSS variables ensure the webpage has minimal or none duplication. 
+          This means that if one property was used 30 times all-throught the webapage 
+          you would be required to make 30 individual changes. Hectic, right?
+          You can define variables in any selectors.
+          <code>
+              body{
+                  --text-color:f80;
+              }
+          </code>
+          This means that the text color specified applies to everything.
+
+        <p>
+
+          Use variables with var(). Variable names will always start with -- .
+          You can math on a variable  using calc() <code>
+              #sidebar{
+                  width: calc(
+                      var(--my-var) + 1em
+                  )
+              }
+          </code>
+          Using JavaScript, you can change a variables value. <code>
+              let root= document.documentElement;
+              root.style.setProperty('
+              --text-color', 'black');
+          </code>
+          Changes to variables apply immediatly.
+        </p>
+      </article>
+    </section>
+
+    <section class="main-section" id="getting_fancy">
+      <header>Getting Fancy With CSS</header>
+      <article>
+        <p>
+          <ol>
+              <li>Hidding Elements</li>
+              <p>
+                  There are many ways to make elements disappear. 
+                  <ul>
+                      <li>Opacity: 0</li> Element is still clickable and visible.
+                      <li>Display: none</li> Other elements move to fill the empty space
+                      <li>Fading out</li> This uses transition and an opacity of 0
+                      <li>Visibilty: hidden</li> The mpty space left will stay empty
+                      <li>z-index</li> Makes elements overlap 
+                  </ul>
+              </p>
+
+              <li>Transition</li>
+              <p>
+                  An elemen's computed style can change. This can be done either through pseudo classes and Javacript. 
+                  The effected chnages are immediate unless you set the transition property.
+                  Transition has three parts:
+                  <ul>
+                      <li>Which css property to animate</li>
+                      <li>Duration</li>
+                      <li>Timing Function</li>
+                  </ul>
+                  Not all CSS properties can be animated.
+              </p>
+          </ol>
+        </p>
+  
+      
+      </article>
+    </section>
+
+    <!--<section class="main-section" id="Constants">
+      <header>Constants</header>
+      <article>
+        <p>
+          You can create a read-only, named constant with the const keyword. The
+          syntax of a constant identifier is the same as for a variable
+          identifier: it must start with a letter, underscore or dollar sign and
+          can contain alphabetic, numeric, or underscore characters.
+        </p>
+  
+        <code>const PI = 3.14;</code>
+        <p>
+          A constant cannot change value through assignment or be re-declared
+          while the script is running. It has to be initialized to a value.
+        </p>
+  
+        <p>
+          The scope rules for constants are the same as those for let block scope
+          variables. If the const keyword is omitted, the identifier is assumed to
+          represent a variable.
+        </p>
+  
+        <p>
+          You cannot declare a constant with the same name as a function or
+          variable in the same scope. For example:
+        </p>
+  
+        <code
+          >// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS WILL
+          CAUSE AN ERROR ALSO function f() { const g = 5; var g; //statements
+          }</code
+        >
+        However, object attributes are not protected, so the following statement
+        is executed without problems.
+        <code
+          >const MY_OBJECT = {"key": "value"}; MY_OBJECT.key = "otherValue";</code
+        >
+      </article>
+    </section>-->
+
+    <section class="main-section" id="media_queries">
+      <header>Media Queries</header>
+      <article>
+        <p>Media queries let you use different CSS in diffrent sitiuations.
+            <code>
+                @media (max-width: 500px){
+                    //CSS for small screens
+                }
+
+                @@media (min-width: 950px){
+                    //CSS for large screens
+                }
+            </code>
+            Screen is for computer/mobile screens. Print is used when printing a webpage.
+            There are more such as tv, tty,speech, braille etc. 
+        </p>
+        <p>
+            You can sometimes find a user's preference using media queries.
+            <code>
+                prefers-reduced-motion: reduce
+
+                prefers-color-scheme: dark
+            </code>
+        </p>
+        <p>
+            You can combine media queries using
+            <code>
+                @media screen and (
+                    max-width: 1024px)
+            </code>
+        </p>
+        <p>
+            Make sure you website ahs a viewport meta tag so that it doesn't look bad on 
+            mobile. <code>
+                meta name="viewport" content="width=device-width, initial-scale=1"
+            </code>
+        </p>
+
+        
+      </article>
+    </section>
+
+    <section class="main-section" id="css_inspector">
+      <header>CSS Inspector</header>
+      <article>
+        All major browsers have a CSS inspector.You can get it by right clicking on page and selecting 
+        inspect Element. Through the inspector you can 
+        <ul>
+            <li>See overriden properties</li>
+            <li>Look at margin and padding </li>
+            <li>Edit CSS properties</li>
+            <li>See computed styles</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="main-section" id="testing_checklist">
+      <header>Testing Checklist</header>
+      <article>
+        It is important to test you site with diffrent browers , screen sizes
+        and accessibilty evaluation.
+        <ol>
+            <li>Browsers</li>
+            <ul>
+                <li>Chrome</li>
+                <li>Safari</li>
+                <li>Firefox</li>
+                <li>Others</li>
+            </ul>
+            <li>Sizes</li>
+            <ul>
+                <li>Small 300px</li>
+                <li>Tablet 700px</li>
+                <li>Desktop 1200px</li>
+            </ul>
+            <li>Accessibility</li>
+            <ul>
+                <li>Color contrast</li>
+                <li>Text SizeK</li>
+                <li>Keyboard Navigation</li>
+                <li>works with a screen reader</li>
+            </ul>
+            <li>Performance</li>
+            <ul>
+                <li>Fake a slow/ high latency network connection</li>
+            </ul>
+        </ol>
+        
+    </article>
+    </section>
+    <!--<section class="main-section" id="Function_declarations">
+      <header>Function declarations</header>
+      <article>
+        A function definition (also called a function declaration, or function
+        statement) consists of the function keyword, followed by:
+  
+        <ul>
+          <li>The name of the function.</li>
+          <li>
+            A list of arguments to the function, enclosed in parentheses and
+            separated by commas.
+          </li>
+          <li>
+            The JavaScript statements that define the function, enclosed in curly
+            brackets, { }.
+          </li>
+        </ul>
+        <p>
+          For example, the following code defines a simple function named square:
+        </p>
+  
+        <code>function square(number) { return number * number; }</code>
+        <p>
+          The function square takes one argument, called number. The function
+          consists of one statement that says to return the argument of the
+          function (that is, number) multiplied by itself. The return statement
+          specifies the value returned by the function.
+        </p>
+        <code>return number * number;</code>
+        <p>
+          Primitive parameters (such as a number) are passed to functions by
+          value; the value is passed to the function, but if the function changes
+          the value of the parameter, this change is not reflected globally or in
+          the calling function.
+        </p>
+      </article>
+    </section>-->
+
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <article>
+        <ul>
+          <li>
+            All the documentation in this page is taken from
+            <a
+              href="https://css-examples.wizardzines.com"
+              target="_blank"
+              >WizardZines</a
+            >
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  
